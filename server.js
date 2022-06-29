@@ -1,4 +1,5 @@
 // DEPENDENCIES
+// DEPENDENCIES
 const express = require('express')
 const mongoose = require('mongoose')
 
@@ -17,6 +18,10 @@ app.use(express.urlencoded({extended: true}))
 app.get('/', (req, res) => {
   res.send('Welcome to the Hello World! API')
 })
+
+// LANGUAGES 
+const languagesController = require('./controllers/languages_controller.js')
+app.use('/languages', languagesController)
 
 // LISTEN
 app.listen(PORT, () => {
